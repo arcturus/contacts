@@ -629,7 +629,7 @@ contacts.Form = (function() {
   var onGoToSelectTag = function onGoToSelectTag(evt) {
     evt.preventDefault();
     var target = evt.currentTarget;
-    LazyLoader.load('/js/utilities/tagSelector.js', function() {
+    LazyLoader.load('/contacts/js/utilities/tagSelector.js', function() {
       TagSelector.show(target.children[0]);
     });
     return false;
@@ -680,7 +680,7 @@ contacts.Form = (function() {
         }
       }
       if (idx !== -1) {
-        contact.category[idx] = contact.category[idx] + '/updated';
+        contact.category[idx] = contact.category[idx] + '/contacts/updated';
       }
     }
   }
@@ -793,7 +793,7 @@ contacts.Form = (function() {
         'email', 'note', 'bday', 'anniversary', 'adr'];
 
       // Load what we need to check myContact
-      LazyLoader.load('/js/utilities/mozContact.js', function() {
+      LazyLoader.load('/contacts/js/utilities/mozContact.js', function() {
         if (utils.mozContact.haveEmptyFields(myContact, fields)) {
           return;
         }
@@ -981,7 +981,7 @@ contacts.Form = (function() {
       }
     };
 
-    LazyLoader.load('/js/utilities/merge_helper.js', function() {
+    LazyLoader.load('/contacts/js/utilities/merge_helper.js', function() {
       MergeHelper.merge(contact, list).then(callbacks.success, callbacks.error);
     });
   };
@@ -998,9 +998,9 @@ contacts.Form = (function() {
   };
 
   var doMatch = function doMatch(contact, callbacks) {
-    LazyLoader.load(['/shared/js/text_normalizer.js',
-                     '/shared/js/simple_phone_matcher.js',
-                     '/shared/js/contacts/contacts_matcher.js'], function() {
+    LazyLoader.load(['/contacts/shared/js/text_normalizer.js',
+                     '/contacts/shared/js/simple_phone_matcher.js',
+                     '/contacts/shared/js/contacts/contacts_matcher.js'], function() {
       Matcher.match(contact, 'active', callbacks);
     });
   };
@@ -1391,7 +1391,7 @@ contacts.Form = (function() {
   }
 
   function removeOrUpdatePhoto() {
-    LazyLoader.load('/js/action_menu.js', function() {
+    LazyLoader.load('/contacts/js/action_menu.js', function() {
       var prompt = new ActionMenu('photo-options');
       prompt.addToList({id: 'remove-photo'}, removePhoto);
 

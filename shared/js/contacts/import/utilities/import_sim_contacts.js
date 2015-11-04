@@ -100,11 +100,11 @@ function SimContactsImporter(targetIcc) {
     }
 
     LazyLoader.load([
-      '/shared/js/simple_phone_matcher.js',
-      '/shared/js/contacts/contacts_matcher.js',
-      '/shared/js/contacts/contacts_merger.js',
-      '/shared/js/contacts/utilities/image_thumbnail.js',
-      '/shared/js/contacts/merger_adapter.js'
+      '/contacts/shared/js/simple_phone_matcher.js',
+      '/contacts/shared/js/contacts/contacts_matcher.js',
+      '/contacts/shared/js/contacts/contacts_merger.js',
+      '/contacts/shared/js/contacts/utilities/image_thumbnail.js',
+      '/contacts/shared/js/contacts/merger_adapter.js'
     ], function loaded() {
       loadedMatch = true;
       document.dispatchEvent(new CustomEvent('matchLoaded'));

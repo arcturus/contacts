@@ -67,8 +67,8 @@ var TelephonyMessages = {
       return;
     }
 
-    LazyLoader.load(['/shared/style/confirm.css',
-                     '/shared/js/confirm.js',
+    LazyLoader.load(['/contacts/shared/style/confirm.css',
+                     '/contacts/shared/js/confirm.js',
                      document.getElementById('confirmation-message')],
       function() {
         ConfirmDialog.show(

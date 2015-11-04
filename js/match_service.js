@@ -29,14 +29,14 @@
 
   matchService.match = function(contactId) {
     var url =
-      '/views/matching/matching_contacts.html?contactId=' +
+      '/contacts/views/matching/matching_contacts.html?contactId=' +
       contactId;
     openWindow(url);
   };
 
   matchService.showDuplicateContacts = function() {
     var url =
-      '/views/matching/matching_contacts.html';
+      '/contacts/views/matching/matching_contacts.html';
     openWindow(url);
   };
 

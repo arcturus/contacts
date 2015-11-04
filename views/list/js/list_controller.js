@@ -99,9 +99,9 @@
       // (ex: the Facebook guards) experience a consistent MIME type.
       _activity.source.data.type = 'text/vcard';
       LazyLoader.load([
-                       '/shared/js/text_normalizer.js',
-                       '/shared/js/contact2vcard.js',
-                       '/shared/js/setImmediate.js'
+                       '/contacts/shared/js/text_normalizer.js',
+                       '/contacts/shared/js/contact2vcard.js',
+                       '/contacts/shared/js/setImmediate.js'
                       ], function lvcard() {
         ContactToVcardBlob([theContact], function blobReady(vcardBlob) {
           VcardFilename(theContact).then(filename => {
@@ -159,7 +159,7 @@
     result.name = theContact.name;
     switch (numOfData) {
       case 0:
-        LazyLoader.load(['/shared/js/confirm.js',
+        LazyLoader.load(['/contacts/shared/js/confirm.js',
           document.getElementById('confirmation-message')], function() {
           // If no required type of data
           var dismiss = {
@@ -184,7 +184,7 @@
         break;
       default:
         // if more than one required type of data
-        LazyLoader.load('/js/action_menu.js', function() {
+        LazyLoader.load('/contacts/js/action_menu.js', function() {
           if (!_actionMenu) {
             _actionMenu = new ActionMenu();
           } else {

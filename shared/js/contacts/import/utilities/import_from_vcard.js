@@ -12,10 +12,10 @@ var utils = window.utils || {};
 utils.importFromVcard = function(file, callback) {
 
   var MERGE_DEPENDENCIES = [
-    '/shared/js/simple_phone_matcher.js',
-    '/shared/js/contacts/merger_adapter.js',
-    '/shared/js/contacts/contacts_merger.js',
-    '/shared/js/contacts/contacts_matcher.js'
+    '/contacts/shared/js/simple_phone_matcher.js',
+    '/contacts/shared/js/contacts/merger_adapter.js',
+    '/contacts/shared/js/contacts/contacts_merger.js',
+    '/contacts/shared/js/contacts/contacts_matcher.js'
   ];
 
   Loader.utility('Overlay', function() {

@@ -55,7 +55,7 @@
 
     var contactId = evt.detail.contactId;
     var dependencies = [
-      '/js/match_service.js'
+      '/contacts/js/match_service.js'
     ];
 
     function onContactMerged(event) {
@@ -182,9 +182,9 @@
 
   function shareContact(evt) {
     const VCARD_DEPS = [
-      '/shared/js/text_normalizer.js',
-      '/shared/js/contact2vcard.js',
-      '/shared/js/setImmediate.js'
+      '/contacts/shared/js/text_normalizer.js',
+      '/contacts/shared/js/contact2vcard.js',
+      '/contacts/shared/js/setImmediate.js'
     ];
 
     if (!evt.detail || typeof evt.detail.contact === 'undefined') {
@@ -225,7 +225,7 @@
 
   function setContact(contactID) {
     _contactID = contactID;
-    LazyLoader.load('/js/nfc.js', () => {
+    LazyLoader.load('/contacts/js/nfc.js', () => {
       ContactsService.get(contactID, contact => {
         NFC.startListening(contact);
       }, error => {

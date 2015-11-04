@@ -25,13 +25,13 @@
         importedContacts = 0,
         parsedContacts = 0;
     const DEPENDENCIES = [
-      '/shared/js/contacts/import/utilities/status.js',
-      '/shared/js/simple_phone_matcher.js',
-      '/shared/js/contacts/contacts_matcher.js',
-      '/shared/js/contacts/contacts_merger.js',
-      '/shared/js/contacts/merger_adapter.js',
-      '/services/contacts.js',
-      '/shared/js/text_normalizer.js'
+      '/contacts/shared/js/contacts/import/utilities/status.js',
+      '/contacts/shared/js/simple_phone_matcher.js',
+      '/contacts/shared/js/contacts/contacts_matcher.js',
+      '/contacts/shared/js/contacts/contacts_merger.js',
+      '/contacts/shared/js/contacts/merger_adapter.js',
+      '/contacts/services/contacts.js',
+      '/contacts/shared/js/text_normalizer.js'
     ];
     LazyLoader.load(DEPENDENCIES, function() {
       contactsToImport.forEach((contact, index) => {

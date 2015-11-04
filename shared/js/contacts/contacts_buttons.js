@@ -31,7 +31,7 @@ var ContactsButtons = {
   _call: function call(phoneNumber, cardIndex) {
     this._disableCalls();
     var enableCalls = this._enableCalls.bind(this);
-    LazyLoader.load('/dialer/js/telephony_helper.js', () => {
+    LazyLoader.load('/contacts/dialer/js/telephony_helper.js', () => {
       TelephonyHelper.call(phoneNumber, cardIndex, enableCalls, enableCalls,
                          enableCalls, enableCalls);
     });
@@ -55,7 +55,7 @@ var ContactsButtons = {
     } else if (this._isMMI(number)) {
       button.addEventListener('click', this._onMMICode.bind(this));
     } else if (navigator.mozTelephony) {
-      LazyLoader.load(['/shared/js/multi_sim_action_button.js'], function() {
+      LazyLoader.load(['/contacts/shared/js/multi_sim_action_button.js'], function() {
         /* jshint nonew: false */
         new MultiSimActionButton(button, self._call.bind(self),
                                  'ril.telephony.defaultServiceId',
@@ -91,7 +91,7 @@ var ContactsButtons = {
 
   _onSendSmsClicked: function onSendSmsClicked(evt) {
     var tel = evt.target.dataset.tel;
-    LazyLoader.load('/shared/js/contacts/sms_integration.js', () => {
+    LazyLoader.load('/contacts/shared/js/contacts/sms_integration.js', () => {
       SmsIntegration.sendSms(tel);
     });
   },

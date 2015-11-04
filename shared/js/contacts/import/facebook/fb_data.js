@@ -22,10 +22,10 @@ var fb = window.fb || {};
     var isIndexDirty = false;
     var READER_LOADED_EV = 'reader_loaded';
 
-    var TEL_INDEXER_JS = '/shared/js/fb/fb_tel_index.js';
-    var PHONE_MATCHER_JS = '/shared/js/simple_phone_matcher.js';
-    var FB_READER_JS = '/shared/js/fb/fb_data_reader.js';
-    var BINARY_SEARCH_JS = '/shared/js/binary_search.js';
+    var TEL_INDEXER_JS = '/contacts/shared/js/fb/fb_tel_index.js';
+    var PHONE_MATCHER_JS = '/contacts/shared/js/simple_phone_matcher.js';
+    var FB_READER_JS = '/contacts/shared/js/fb/fb_data_reader.js';
+    var BINARY_SEARCH_JS = '/contacts/shared/js/binary_search.js';
 
     contacts.UID_NOT_FOUND = 'UIDNotFound';
     contacts.ALREADY_EXISTS = 'AlreadyExists';

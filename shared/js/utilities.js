@@ -148,7 +148,7 @@ var HtmlHelper = {
     span.innerHTML = span.innerHTML.replace(/\s/g, '&nbsp;');
 
     if (escapeQuotes) {
-      return span.innerHTML.replace(/"/g, '&quot;').replace(/'/g, '&#x27;'); //"
+      return span.innerHTML.replace(/"/g, '&quot;').replace(/'/contacts/g, '&#x27;'); //"
     }
     return span.innerHTML;
   },

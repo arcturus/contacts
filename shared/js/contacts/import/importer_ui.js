@@ -93,7 +93,7 @@ if (typeof window.importer === 'undefined') {
       var recommend = serviceConnector.name === 'facebook';
       var dialog = parent.document.getElementById('confirmation-message');
       parent.LazyLoader.load(dialog, function() {
-        LazyLoader.load('/shared/js/confirm.js',
+        LazyLoader.load('/contacts/shared/js/confirm.js',
           function() {
           ConfirmDialog.show('connectionLost', 'connectionLostMsg',
           {
@@ -600,7 +600,7 @@ if (typeof window.importer === 'undefined') {
     function showNoFriends(callback) {
       var dialog = parent.document.getElementById('confirmation-message');
       parent.LazyLoader.load(dialog, function() {
-        LazyLoader.load('/shared/js/confirm.js', function() {
+        LazyLoader.load('/contacts/shared/js/confirm.js', function() {
           ConfirmDialog.show(null, 'emptyAccount',
           {
             title: 'ok',

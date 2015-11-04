@@ -59,9 +59,9 @@
       abort();
     };
 
-    var matcherDependencies = ['/shared/js/text_normalizer.js',
-                               '/shared/js/simple_phone_matcher.js',
-                               '/shared/js/contacts/contacts_matcher.js'];
+    var matcherDependencies = ['/contacts/shared/js/text_normalizer.js',
+                               '/contacts/shared/js/simple_phone_matcher.js',
+                               '/contacts/shared/js/contacts/contacts_matcher.js'];
     LazyLoader.load(matcherDependencies, function loaded() {
       // Give some time to see the searching for duplicates message
       setTimeout(function() {
@@ -184,7 +184,7 @@
       return;
     }
 
-    var MERGE_DEPS = ['/js/utilities/merge_helper.js'];
+    var MERGE_DEPS = ['/contacts/js/utilities/merge_helper.js'];
     LazyLoader.load(MERGE_DEPS, function loaded() {
       var cb = function cb() {
         Curtain.hide(function() {

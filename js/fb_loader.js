@@ -26,19 +26,19 @@ var fbLoader = (function() {
     document.body.appendChild(iframesFragment);
 
     var scripts = [
-      '/shared/js/contacts/import/utilities/misc.js',
-      '/shared/js/contacts/import/import_status_data.js',
-      '/js/service_extensions.js',
-      '/shared/pages/import/js/parameters.js',
-      '/shared/js/fb/fb_request.js',
-      '/shared/js/contacts/import/facebook/fb_data.js',
-      '/shared/js/contacts/import/facebook/fb_utils.js',
-      '/shared/js/contacts/import/facebook/fb_query.js',
-      '/shared/js/fb/fb_reader_utils.js',
-      '/shared/js/contacts/import/facebook/fb_contact_utils.js',
-      '/shared/js/contacts/import/facebook/fb_contact.js',
-      '/js/fb/fb_link.js',
-      '/js/fb/fb_messaging.js'
+      '/contacts/shared/js/contacts/import/utilities/misc.js',
+      '/contacts/shared/js/contacts/import/import_status_data.js',
+      '/contacts/js/service_extensions.js',
+      '/contacts/shared/pages/import/js/parameters.js',
+      '/contacts/shared/js/fb/fb_request.js',
+      '/contacts/shared/js/contacts/import/facebook/fb_data.js',
+      '/contacts/shared/js/contacts/import/facebook/fb_utils.js',
+      '/contacts/shared/js/contacts/import/facebook/fb_query.js',
+      '/contacts/shared/js/fb/fb_reader_utils.js',
+      '/contacts/shared/js/contacts/import/facebook/fb_contact_utils.js',
+      '/contacts/shared/js/contacts/import/facebook/fb_contact.js',
+      '/contacts/js/fb/fb_link.js',
+      '/contacts/js/fb/fb_messaging.js'
     ];
 
     LazyLoader.load(scripts, function() {

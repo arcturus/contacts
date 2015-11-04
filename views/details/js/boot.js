@@ -12,7 +12,7 @@
  * independent and will communicate through events.
  */
 window.addEventListener('DOMContentLoaded', function() {
-  LazyLoader.load(['/shared/js/l10n.js']).then(function() {
+  LazyLoader.load(['/contacts/shared/js/l10n.js']).then(function() {
     LazyLoader.load([
       document.getElementById('view-contact-details')
     ]).then(function() {
@@ -23,18 +23,18 @@ window.addEventListener('DOMContentLoaded', function() {
 
 window.onload = function() {
   var dependencies = [
-    '/js/param_utils.js',
-    '/services/contacts.js',
-    '/shared/js/l10n_date.js',
-    '/shared/js/contact_photo_helper.js',
-    '/shared/js/contacts/contacts_buttons.js',
-    '/shared/js/text_normalizer.js',
-    '/shared/js/contacts/utilities/dom.js',
-    '/shared/js/contacts/utilities/templates.js',
-    '/shared/js/contacts/import/utilities/misc.js',
-    '/views/details/js/details_ui.js',
-    '/views/details/js/details_controller.js',
-    '/shared/pages/import/js/curtain.js'
+    '/contacts/js/param_utils.js',
+    '/contacts/services/contacts.js',
+    '/contacts/shared/js/l10n_date.js',
+    '/contacts/shared/js/contact_photo_helper.js',
+    '/contacts/shared/js/contacts/contacts_buttons.js',
+    '/contacts/shared/js/text_normalizer.js',
+    '/contacts/shared/js/contacts/utilities/dom.js',
+    '/contacts/shared/js/contacts/utilities/templates.js',
+    '/contacts/shared/js/contacts/import/utilities/misc.js',
+    '/contacts/views/details/js/details_ui.js',
+    '/contacts/views/details/js/details_controller.js',
+    '/contacts/shared/pages/import/js/curtain.js'
   ];
 
   LazyLoader.load(dependencies).then(function() {

@@ -10,13 +10,13 @@
   // needed to use the view/utility.
 
   var SHARED = 'shared';
-  var SHARED_PATH = '/' + SHARED + '/' + 'js';
+  var SHARED_PATH = '/contacts/' + SHARED + '/contacts/' + 'js';
 
   var SHARED_UTILS = 'sharedUtilities';
-  var SHARED_UTILS_PATH = SHARED_PATH + '/contacts/import/utilities';
+  var SHARED_UTILS_PATH = SHARED_PATH + '/contacts/contacts/import/utilities';
 
   var SHARED_CONTACTS = 'sharedContacts';
-  var SHARED_CONTACTS_PATH = SHARED_PATH + '/' + 'contacts';
+  var SHARED_CONTACTS_PATH = SHARED_PATH + '/contacts/' + 'contacts';
 
   /**
    * Specifies dependencies for resources
@@ -25,7 +25,7 @@
   var dependencies = {
     views: {
       Search: function(callback) {
-        LazyLoader.load(SHARED_PATH + '/utilities.js', callback);
+        LazyLoader.load(SHARED_PATH + '/contacts/utilities.js', callback);
       }
     },
     utilities: {},
@@ -58,7 +58,7 @@
       if (elementMapping[name] && elementMapping[name][1]) {
         path = elementMapping[name][1];
       }
-      var finalPath = 'js' + '/' + type;
+      var finalPath = 'js' + '/contacts/' + type;
 
       switch (path) {
         case SHARED:
@@ -71,10 +71,10 @@
           finalPath = SHARED_CONTACTS_PATH;
           break;
         default:
-          finalPath = 'js' + '/' + type;
+          finalPath = 'js' + '/contacts/' + type;
       }
 
-      var toLoad = [finalPath + '/' + name + '.js'];
+      var toLoad = [finalPath + '/contacts/' + name + '.js'];
       if (elementMapping[name] && elementMapping[name][0]) {
         var node = document.getElementById(elementMapping[name][0]);
         if (node) {

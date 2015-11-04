@@ -14,7 +14,7 @@
 
 window.addEventListener('DOMContentLoaded', function() {
   LazyLoader.load([
-    '/shared/js/l10n.js'], function() {
+    '/contacts/shared/js/l10n.js'], function() {
     LazyLoader.load([
       document.getElementById('view-contact-form')
     ], function() {
@@ -25,21 +25,21 @@ window.addEventListener('DOMContentLoaded', function() {
 
 window.addEventListener('load', function() {
   var dependencies = [
-    '/js/param_utils.js',
-    '/js/navigation.js',
-    '/services/contacts.js',
-    '/shared/js/l10n_date.js',
-    '/shared/js/contact_photo_helper.js',
-    '/shared/js/contacts/utilities/templates.js',
-    '/js/contacts_tag.js',
-    '/js/tag_options.js',
-    '/shared/js/text_normalizer.js',
-    '/shared/js/contacts/import/utilities/status.js',
-    '/shared/js/contacts/utilities/dom.js',
-    '/shared/js/contacts/import/utilities/misc.js',
-    '/views/form/js/form_ui.js',
-    '/views/form/js/form_controller.js',
-    '/js/utilities/cookie.js'
+    '/contacts/js/param_utils.js',
+    '/contacts/js/navigation.js',
+    '/contacts/services/contacts.js',
+    '/contacts/shared/js/l10n_date.js',
+    '/contacts/shared/js/contact_photo_helper.js',
+    '/contacts/shared/js/contacts/utilities/templates.js',
+    '/contacts/js/contacts_tag.js',
+    '/contacts/js/tag_options.js',
+    '/contacts/shared/js/text_normalizer.js',
+    '/contacts/shared/js/contacts/import/utilities/status.js',
+    '/contacts/shared/js/contacts/utilities/dom.js',
+    '/contacts/shared/js/contacts/import/utilities/misc.js',
+    '/contacts/views/form/js/form_ui.js',
+    '/contacts/views/form/js/form_controller.js',
+    '/contacts/js/utilities/cookie.js'
   ];
 
   LazyLoader.load(

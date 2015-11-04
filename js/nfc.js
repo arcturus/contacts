@@ -43,9 +43,9 @@
   var handlePeerReady = function(event) {
     mozNfcPeer = event.peer;
     LazyLoader.load([
-      '/shared/js/contact2vcard.js',
-      '/shared/js/setImmediate.js',
-      '/shared/js/nfc_utils.js'
+      '/contacts/shared/js/contact2vcard.js',
+      '/contacts/shared/js/setImmediate.js',
+      '/contacts/shared/js/nfc_utils.js'
       ], function() {
       ContactToVcard(
         [currentContact],

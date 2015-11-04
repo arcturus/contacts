@@ -14,7 +14,7 @@
     var CONTACTS_APP_ORIGIN = location.origin;
 
     var listDependencies = [
-      '/shared/js/contacts/utilities/image_loader.js'
+      '/contacts/shared/js/contacts/utilities/image_loader.js'
     ];
 
     var MatchingUI = {

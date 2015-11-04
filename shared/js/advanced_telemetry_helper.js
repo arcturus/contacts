@@ -16,8 +16,8 @@
  *
  * App Setup:
  *   1) Add the following to the app (e.g. index.html):
- *   <script defer src="/shared/js/advanced_telemetry_helper.js"></script>
- *   <script defer src="/shared/js/settings_listener.js"></script>
+ *   <script defer src="/contacts/shared/js/advanced_telemetry_helper.js"></script>
+ *   <script defer src="/contacts/shared/js/settings_listener.js"></script>
  *   2) Include AdvancedTelemetryHelper in the globals.
  *
  * Counter Metric Usage Example:

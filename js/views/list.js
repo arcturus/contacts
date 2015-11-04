@@ -411,7 +411,7 @@ contacts.List = (function() {
       return;
     }
 
-    utils.config.load('/config.json').then(function ready(configData) {
+    utils.config.load('/contacts/config.json').then(function ready(configData) {
       orderByLastName = (configData.defaultContactsOrder ===
                 ORDER_BY_FAMILY_NAME ? true : false);
       defaultImage = configData.defaultImage === true;
@@ -723,7 +723,7 @@ contacts.List = (function() {
 
   function loadVisibilityMonitor() {
     return new Promise((resolve) => {
-      LazyLoader.load('/shared/js/tag_visibility_monitor.js', () => {
+      LazyLoader.load('/contacts/shared/js/tag_visibility_monitor.js', () => {
         var scrollMargin = ~~(getViewHeight() * 1.5);
         // NOTE: Making scrollDelta too large will cause janky scrolling
         //       due to bursts of onscreen() calls from the monitor.
@@ -899,9 +899,9 @@ contacts.List = (function() {
     // Replacing old message 'startup-path-done'
     utils.PerformanceHelper.loadEnd();
     LazyLoader.load([
-     '/js/fb/fb_init.js',
-     '/js/fb_loader.js',
-     '/shared/js/contacts/utilities/image_loader.js'
+     '/contacts/js/fb/fb_init.js',
+     '/contacts/js/fb_loader.js',
+     '/contacts/shared/js/contacts/utilities/image_loader.js'
     ], () => {
       fb.init(function contacts_init() {
         if (fb.isEnabled) {
@@ -931,8 +931,8 @@ contacts.List = (function() {
     }
     return new Promise((resolve, reject) => {
       LazyLoader.load([
-        '/js/utilities/ice_data.js',
-        '/shared/js/contacts/utilities/ice_store.js'],
+        '/contacts/js/utilities/ice_data.js',
+        '/contacts/shared/js/contacts/utilities/ice_store.js'],
        function() {
         ICEStore.getContacts().then((ids) => {
           ICELoaded = true;
@@ -1001,7 +1001,7 @@ contacts.List = (function() {
     elem.classList.add('contact-item');
     elem.dataset.group = 'ice';
     var icon = document.createElement('span');
-    icon.src = '/style/images/icon_ice.png';
+    icon.src = '/contacts/style/images/icon_ice.png';
     var p = document.createElement('p');
     p.classList.add('contact-text');
     p.setAttribute('data-l10n-id', 'ICEContactsGroup');
@@ -1030,7 +1030,7 @@ contacts.List = (function() {
 
   function onICEGroupClicked() {
     loadICE().then(() => {
-      LazyLoader.load('/shared/js/contacts/utilities/image_loader.js', () => {
+      LazyLoader.load('/contacts/shared/js/contacts/utilities/image_loader.js', () => {
         Loader.view('Ice', function() {
           // Prebuild the rows here, we have all the data to
           // build them. Current amount of rows is 2.
@@ -1054,8 +1054,8 @@ contacts.List = (function() {
   };
 
   var lazyLoadImages = function lazyLoadImages() {
-    LazyLoader.load(['/shared/js/contacts/utilities/image_loader.js',
-                     '/js/fb_resolver.js'], function() {
+    LazyLoader.load(['/contacts/shared/js/contacts/utilities/image_loader.js',
+                     '/contacts/js/fb_resolver.js'], function() {
       if (!imgLoader) {
         imgLoader = new ImageLoader('#groups-container',
                                     'li:not([data-group="ice"])');

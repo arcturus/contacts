@@ -203,8 +203,8 @@ var Contacts = (function() {
     window.removeEventListener('listRendered', loadDeferredActions);
     LazyLoader.load([
       'js/deferred_actions.js',
-      '/js/fb_loader.js',
-      '/js/fb/fb_init.js'
+      '/contacts/js/fb_loader.js',
+      '/contacts/js/fb/fb_init.js'
     ], function() {
       DeferredActions.execute();
     });
@@ -322,8 +322,8 @@ var Contacts = (function() {
 
   var loadFacebook = function loadFacebook(callback) {
     LazyLoader.load([
-      '/js/fb_loader.js',
-      '/js/fb/fb_init.js'
+      '/contacts/js/fb_loader.js',
+      '/contacts/js/fb/fb_init.js'
     ], () => {
       if (!fbLoader.loaded) {
         fb.init(function onInitFb() {
@@ -345,9 +345,9 @@ var Contacts = (function() {
     } else {
       initDetails(function onDetails() {
         LazyLoader.load([
-          '/shared/js/contacts/import/utilities/misc.js',
-          '/shared/js/contacts/utilities/image_thumbnail.js',
-          '/js/match_service.js'],
+          '/contacts/shared/js/contacts/import/utilities/misc.js',
+          '/contacts/shared/js/contacts/utilities/image_thumbnail.js',
+          '/contacts/js/match_service.js'],
         function() {
           Loader.view('Form', function viewLoaded() {
             formReady = true;
@@ -366,12 +366,12 @@ var Contacts = (function() {
     } else {
       Loader.view('Details', function viewLoaded() {
         LazyLoader.load(
-          ['/shared/js/contacts/import/utilities/misc.js',
-           '/dialer/js/telephony_helper.js',
-           '/shared/js/contacts/sms_integration.js',
-           '/shared/js/contacts/contacts_buttons.js',
-           '/js/match_service.js',
-           '/js/utilities/mozContact.js'],
+          ['/contacts/shared/js/contacts/import/utilities/misc.js',
+           '/contacts/dialer/js/telephony_helper.js',
+           '/contacts/shared/js/contacts/sms_integration.js',
+           '/contacts/shared/js/contacts/contacts_buttons.js',
+           '/contacts/js/match_service.js',
+           '/contacts/js/utilities/mozContact.js'],
         function() {
           detailsReady = true;
           contactsDetails = contacts.Details;
@@ -475,15 +475,15 @@ var Contacts = (function() {
   var addAsyncScripts = function addAsyncScripts() {
 
     var lazyLoadFiles = [
-      '/shared/js/contacts/utilities/templates.js',
-      '/shared/js/contacts/contacts_shortcuts.js',
-      '/js/contacts_tag.js',
-      '/js/tag_options.js',
-      '/js/loader.js',
-      '/shared/js/text_normalizer.js',
-      '/shared/js/contacts/import/utilities/status.js',
-      '/shared/js/contacts/utilities/dom.js',
-      '/shared/js/confirm.js',
+      '/contacts/shared/js/contacts/utilities/templates.js',
+      '/contacts/shared/js/contacts/contacts_shortcuts.js',
+      '/contacts/js/contacts_tag.js',
+      '/contacts/js/tag_options.js',
+      '/contacts/js/loader.js',
+      '/contacts/shared/js/text_normalizer.js',
+      '/contacts/shared/js/contacts/import/utilities/status.js',
+      '/contacts/shared/js/contacts/utilities/dom.js',
+      '/contacts/shared/js/confirm.js',
       document.getElementById('confirmation-message')
     ];
 
@@ -618,9 +618,9 @@ var Contacts = (function() {
     utils.PerformanceHelper.chromeInteractive();
     window.setTimeout(Contacts && Contacts.onLocalized);
     if (window.navigator.mozSetMessageHandler && window.self == window.top) {
-      LazyLoader.load(['/shared/js/contacts/import/utilities/misc.js',
-        '/shared/js/contacts/import/utilities/vcard_reader.js',
-        '/shared/js/contacts/import/utilities/vcard_parser.js'],
+      LazyLoader.load(['/contacts/shared/js/contacts/import/utilities/misc.js',
+        '/contacts/shared/js/contacts/import/utilities/vcard_reader.js',
+        '/contacts/shared/js/contacts/import/utilities/vcard_parser.js'],
        function() {
         var actHandler = ActivityHandler.handle.bind(ActivityHandler);
         window.navigator.mozSetMessageHandler('activity', actHandler);
@@ -637,14 +637,14 @@ var Contacts = (function() {
     });
   };
 
-  LazyLoader.load('/shared/js/l10n.js', () => {
+  LazyLoader.load('/contacts/shared/js/l10n.js', () => {
     navigator.mozL10n.once(() => {
       initContacts();
     });
     navigator.mozL10n.ready(() => {
       Cache.maybeEvict();
     });
-    LazyLoader.load('/shared/js/l10n_date.js');
+    LazyLoader.load('/contacts/shared/js/l10n_date.js');
   });
 
   window.addEventListener('DOMContentLoaded', function onLoad() {

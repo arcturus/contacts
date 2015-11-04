@@ -6,16 +6,16 @@
   'use strict';
 
   /* WARNING this module LazyLoads these modules
-   *   '/shared/js/mime_mapper.js',
-   *   '/shared/js/contacts/utilities/image_thumbnail.js',
-   *   '/shared/js/contacts/import/utilities/misc.js',
-   *   '/shared/js/contacts/utilities/http_rest.js'
+   *   '/contacts/shared/js/mime_mapper.js',
+   *   '/contacts/shared/js/contacts/utilities/image_thumbnail.js',
+   *   '/contacts/shared/js/contacts/import/utilities/misc.js',
+   *   '/contacts/shared/js/contacts/utilities/http_rest.js'
    */
   var dependencies = [
-    '/shared/js/mime_mapper.js',
-    '/shared/js/contacts/utilities/image_thumbnail.js',
-    '/shared/js/contacts/import/utilities/misc.js',
-    '/shared/js/contacts/utilities/http_rest.js'
+    '/contacts/shared/js/mime_mapper.js',
+    '/contacts/shared/js/contacts/utilities/image_thumbnail.js',
+    '/contacts/shared/js/contacts/import/utilities/misc.js',
+    '/contacts/shared/js/contacts/utilities/http_rest.js'
   ];
 
   var ReBasic = /^([^:]+):(.+)$/;

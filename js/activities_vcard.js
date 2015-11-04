@@ -4,7 +4,7 @@
 
 var VcardActivityHandler = (function() {
   var handle = function(activity, parentHandler) {
-    const DEPENDENCIES = '/shared/js/contacts/import/utilities/vcard_reader.js';
+    const DEPENDENCIES = '/contacts/shared/js/contacts/import/utilities/vcard_reader.js';
     LazyLoader.load(DEPENDENCIES, function () {
       getvCardReader(activity.source.data.blob).then(readvCard, (err) => {
         console.error('Error while getting vCard reader:', err);
@@ -35,7 +35,7 @@ var VcardActivityHandler = (function() {
     }
 
     function getFileName(path) {
-      var barIndex = path.lastIndexOf('/');
+      var barIndex = path.lastIndexOf('/contacts/');
       if (barIndex > -1) {
         path = path.substring(barIndex + 1);
       }
@@ -45,7 +45,7 @@ var VcardActivityHandler = (function() {
     function render(contacts, activity, cursor) {
       parentHandler.launch_activity(activity, 'multiple-select-view');
       const DEPENDENCIES = [
-        '/js/views/multiple_select.js'
+        '/contacts/js/views/multiple_select.js'
       ];
       LazyLoader.load(DEPENDENCIES, function() {
         var name;

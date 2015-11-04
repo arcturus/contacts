@@ -43,7 +43,7 @@
   }
 
   function getFileName(path) {
-    var barIndex = path.lastIndexOf('/');
+    var barIndex = path.lastIndexOf('/contacts/');
     if (barIndex > -1) {
       path = path.substring(barIndex + 1);
     }

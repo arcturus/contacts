@@ -23,8 +23,8 @@ limitations under the License.
   var namespace = 'telemetry_gaia_contacts';
 
   var dependencies = LazyLoader.load(
-    ['/shared/js/settings_listener.js',
-     '/shared/js/advanced_telemetry_helper.js']);
+    ['/contacts/shared/js/settings_listener.js',
+     '/contacts/shared/js/advanced_telemetry_helper.js']);
 
   var Telemetry = {
     logImportUsage: function(name) {

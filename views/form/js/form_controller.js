@@ -45,7 +45,7 @@
       }
     };
 
-    LazyLoader.load('/js/utilities/merge_helper.js', function() {
+    LazyLoader.load('/contacts/js/utilities/merge_helper.js', function() {
       MergeHelper.merge(contact, list).then(callbacks.success, callbacks.error);
     });
   }
@@ -88,9 +88,9 @@
   }
 
   function doMatch(contact, callbacks) {
-    LazyLoader.load(['/shared/js/text_normalizer.js',
-                     '/shared/js/simple_phone_matcher.js',
-                     '/shared/js/contacts/contacts_matcher.js'], function() {
+    LazyLoader.load(['/contacts/shared/js/text_normalizer.js',
+                     '/contacts/shared/js/simple_phone_matcher.js',
+                     '/contacts/shared/js/contacts/contacts_matcher.js'], function() {
       Matcher.match(contact, 'active', callbacks);
     });
   }
@@ -263,8 +263,8 @@
         }
         LazyLoader.load(
           [
-            '/style/match_service.css',
-            '/js/match_service.js'
+            '/contacts/style/match_service.css',
+            '/contacts/js/match_service.js'
           ],
           function() {
             var callbacks = cookMatchingCallbacks(contact);

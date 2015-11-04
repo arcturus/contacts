@@ -11,13 +11,13 @@
 
   function loadScripts() {
     var dependencies = [
-     '/services/contacts.js',
-     '/js/activities.js',
-     '/shared/js/contacts/utilities/event_listeners.js',
-     '/js/navigation.js',
-     '/js/param_utils.js',
-     '/js/views/list.js',
-     '/js/header_ui.js'
+     '/contacts/services/contacts.js',
+     '/contacts/js/activities.js',
+     '/contacts/shared/js/contacts/utilities/event_listeners.js',
+     '/contacts/js/navigation.js',
+     '/contacts/js/param_utils.js',
+     '/contacts/js/views/list.js',
+     '/contacts/js/header_ui.js'
     ];
 
     // If the cache is enabled, we push lazy loading l10n to the extreme,
@@ -26,23 +26,23 @@
     // Otherwise, we load the l10n scripts along with the rest of the JS
     // scripts. This will avoid the non localized text to appear in the screen.
     if (!Cache.active) {
-      dependencies.push('/shared/js/l10n.js');
-      dependencies.push('/shared/js/l10n_date.js');
+      dependencies.push('/contacts/shared/js/l10n.js');
+      dependencies.push('/contacts/shared/js/l10n_date.js');
     }
 
     LazyLoader.load(dependencies, () => {
-      ['/shared/js/async_storage.js',
-       '/shared/js/contacts/import/utilities/config.js',
-       '/js/utilities/extract_params.js',
-       '/js/utilities/cookie.js',
-       '/js/main_navigation.js',
-       '/shared/js/contact_photo_helper.js'].forEach((src) => {
+      ['/contacts/shared/js/async_storage.js',
+       '/contacts/shared/js/contacts/import/utilities/config.js',
+       '/contacts/js/utilities/extract_params.js',
+       '/contacts/js/utilities/cookie.js',
+       '/contacts/js/main_navigation.js',
+       '/contacts/shared/js/contact_photo_helper.js'].forEach((src) => {
         var scriptNode = document.createElement('script');
         scriptNode.src = src;
         scriptNode.setAttribute('defer', true);
         document.head.appendChild(scriptNode);
       });
-      return LazyLoader.load('/js/contacts.js');
+      return LazyLoader.load('/contacts/js/contacts.js');
     });
   }
 

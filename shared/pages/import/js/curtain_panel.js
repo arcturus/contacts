@@ -35,7 +35,7 @@ var Curtain = (function() {
 
   var link = document.createElement('link');
   link.setAttribute('rel', 'import');
-  link.setAttribute('href', '/shared/pages/import/elements/curtain.html');
+  link.setAttribute('href', '/contacts/shared/pages/import/elements/curtain.html');
 
   function addListeners() {
     okButton.onclick = function on_ok(e) {

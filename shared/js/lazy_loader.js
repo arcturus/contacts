@@ -7,7 +7,7 @@
  * To use:
  *
  *   LazyLoader.load(
- *    ['/path/to/file.js', '/path/to/file.css', 'domNode'], callback
+ *    ['/contacts/path/to/file.js', '/contacts/path/to/file.css', 'domNode'], callback
  *   );
  */
 var LazyLoader = (function() {
@@ -44,7 +44,7 @@ var LazyLoader = (function() {
 
       // The next few lines are for loading html imports in DEBUG mode
       if (domNode.getAttribute('is')) {
-        this.load(['/shared/js/html_imports.js'], function() {
+        this.load(['/contacts/shared/js/html_imports.js'], function() {
           HtmlImports.populate(callback);
         }.bind(this));
         return;

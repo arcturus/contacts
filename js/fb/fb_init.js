@@ -29,7 +29,7 @@ if (typeof fb.init === 'undefined') {
       }
 
       initializing = true;
-      utils.config.load('/config.json').then(
+      utils.config.load('/contacts/config.json').then(
         function cLoaded(configData) {
           if (configData.facebookEnabled === true) {
             fb.isEnabled = true;

@@ -270,8 +270,8 @@
 
     renderWebrtcClient: function(contact) {
       LazyLoader.load([
-        '/style/webrtc-client/webrtc_client.css',
-        '/js/webrtc-client/webrtc_client.js'
+        '/contacts/style/webrtc-client/webrtc_client.css',
+        '/contacts/js/webrtc-client/webrtc_client.js'
       ]).then(function() {
         WebrtcClient.start(contact);
       });

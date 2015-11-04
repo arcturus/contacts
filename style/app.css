@@ -593,7 +593,7 @@ form[role="dialog"].no-overlay button {
 #contact-list-ice span {
   width: 3rem;
   height: 3rem;
-  background: url('/style/images/icon_ice.png') no-repeat 0 0 / 3rem auto transparent;
+  background: url('/contacts/style/images/icon_ice.png') no-repeat 0 0 / 3rem auto transparent;
 }
 
 #groups-list.selecting #contact-list-ice {

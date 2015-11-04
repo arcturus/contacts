@@ -16,7 +16,7 @@ function getUnusedFilename(storage, name, callback) {
   };
   getreq.onsuccess = function() {
     var version = 0;
-    var p = name.lastIndexOf('/');
+    var p = name.lastIndexOf('/contacts/');
     var dir = name.substring(0, p + 1);
     var file = name.substring(p + 1);
     p = file.lastIndexOf('.');

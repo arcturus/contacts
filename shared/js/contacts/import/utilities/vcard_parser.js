@@ -644,15 +644,15 @@ var VCFReader = (function _VCFReader() {
     };
 
     LazyLoader.load([
-      '/shared/js/simple_phone_matcher.js',
-      '/shared/js/mime_mapper.js',
-      '/shared/js/contact_photo_helper.js',
-      '/shared/js/contacts/import/utilities/misc.js',
-      '/shared/js/contacts/contacts_matcher.js',
-      '/shared/js/contacts/contacts_merger.js',
-      '/shared/js/contacts/utilities/image_thumbnail.js',
-      '/shared/js/contacts/merger_adapter.js',
-      '/shared/js/contacts/utilities/http_rest.js'
+      '/contacts/shared/js/simple_phone_matcher.js',
+      '/contacts/shared/js/mime_mapper.js',
+      '/contacts/shared/js/contact_photo_helper.js',
+      '/contacts/shared/js/contacts/import/utilities/misc.js',
+      '/contacts/shared/js/contacts/contacts_matcher.js',
+      '/contacts/shared/js/contacts/contacts_merger.js',
+      '/contacts/shared/js/contacts/utilities/image_thumbnail.js',
+      '/contacts/shared/js/contacts/merger_adapter.js',
+      '/contacts/shared/js/contacts/utilities/http_rest.js'
     ], function() {
       // Start processing the text
       // The data pump flows as follows:

@@ -121,8 +121,8 @@
     });
 
     LazyLoader.load([
-      '/contacts/js/fb_resolver.js',
-      '/shared/js/contacts/utilities/image_loader.js'
+      '/contacts/contacts/js/fb_resolver.js',
+      '/contacts/shared/js/contacts/utilities/image_loader.js'
     ], function() {
       imgLoader = new ImageLoader('#groups-list-search', 'li');
       imgLoader.setResolver(fb.resolver);

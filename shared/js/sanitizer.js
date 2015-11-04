@@ -25,7 +25,7 @@
   'use strict';
 
   var Sanitizer = {
-    _entity: /[&<>"'/]/g,
+    _entity: /[&<>"'/contacts/]/g,
 
     _entities: {
       '&': '&amp;',
@@ -33,7 +33,7 @@
       '>': '&gt;',
       '"': '&quot;',
       '\'': '&apos;',
-      '/': '&#x2F;'
+      '/contacts/': '&#x2F;'
     },
 
     getEntity: function (s) {

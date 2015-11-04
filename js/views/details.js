@@ -75,7 +75,7 @@ contacts.Details = (function() {
     initPullEffect(cover);
 
     // to avoid race conditions with NFC, we load it before handleDetails
-    LazyLoader.load('/js/nfc.js', () => {
+    LazyLoader.load('/contacts/js/nfc.js', () => {
       favoriteMessage.addEventListener('click', toggleFavorite);
       editContactButton.addEventListener('click', showEditContact);
       header.addEventListener('action', handleDetailsBack);
@@ -90,8 +90,8 @@ contacts.Details = (function() {
     }
     LazyLoader.load(
       [
-        '/style/webrtc-client/webrtc_client.css',
-        '/js/webrtc-client/webrtc_client.js'
+        '/contacts/style/webrtc-client/webrtc_client.css',
+        '/contacts/js/webrtc-client/webrtc_client.js'
       ],
       cb
     );
@@ -151,13 +151,13 @@ contacts.Details = (function() {
 
   // Needed for now because of external call from contacts.js
   var startNFC = function(contact) {
-    LazyLoader.load('/js/nfc.js', () => {
+    LazyLoader.load('/contacts/js/nfc.js', () => {
       NFC.startListening(contact);
     });
   };
 
   var stopNFC = function() {
-    LazyLoader.load('/js/nfc.js', () => {
+    LazyLoader.load('/contacts/js/nfc.js', () => {
       NFC.stopListening();
     });
   };
@@ -605,9 +605,9 @@ contacts.Details = (function() {
 
   var shareContact = function cd_shareContact() {
     const VCARD_DEPS = [
-      '/shared/js/text_normalizer.js',
-      '/shared/js/contact2vcard.js',
-      '/shared/js/setImmediate.js'
+      '/contacts/shared/js/text_normalizer.js',
+      '/contacts/shared/js/contact2vcard.js',
+      '/contacts/shared/js/setImmediate.js'
     ];
 
     LazyLoader.load(VCARD_DEPS,function vcardLoaded() {

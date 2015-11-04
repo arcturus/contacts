@@ -43,7 +43,7 @@
       'action', hideICEList);
     document.getElementById('ice-list').addEventListener('click', clickHandler);
 
-    LazyLoader.load(['/js/utilities/ice_data.js'], function() {
+    LazyLoader.load(['/contacts/js/utilities/ice_data.js'], function() {
       listenForChanges();
     });
   }

@@ -25,7 +25,7 @@
 
   var link = document.createElement('link');
   link.setAttribute('rel', 'import');
-  link.setAttribute('href', '/shared/elements/contacts/overlay.html');
+  link.setAttribute('href', '/contacts/shared/elements/contacts/overlay.html');
 
   function cacheElements() {
     statusContainer = overlay.querySelector('p[role="status"]'),
@@ -93,7 +93,7 @@
       _reject = reject;
       populatePanel();
       LazyLoader.load([
-        '/shared/js/html_imports.js'
+        '/contacts/shared/js/html_imports.js'
       ], function() {
         HtmlImports.populate(function() {
           cacheElements();

@@ -184,7 +184,7 @@
 
   function loadConfirmPrompt() {
     var confirmFiles = [
-      '/shared/js/confirm.js',
+      '/contacts/shared/js/confirm.js',
       document.getElementById('confirmation-message')
     ];
 
@@ -614,8 +614,8 @@
     var target = evt.currentTarget;
     LazyLoader.load(
       [
-        '/views/form/js/main_navigation.js',
-        '/js/utilities/tagSelector.js'
+        '/contacts/views/form/js/main_navigation.js',
+        '/contacts/js/utilities/tagSelector.js'
       ],
       function() {
         TagSelector.show(target.children[0]);
@@ -846,7 +846,7 @@
     } else {
       LazyLoader.load(
       [
-        '/views/form/js/photo_picker.js'
+        '/contacts/views/form/js/photo_picker.js'
       ],
       function() {
         PhotoPicker.pick(appendPhoto);
@@ -859,8 +859,8 @@
   function removeOrUpdatePhoto() {
     LazyLoader.load(
       [
-        '/views/form/js/photo_picker.js',
-        '/js/action_menu.js'
+        '/contacts/views/form/js/photo_picker.js',
+        '/contacts/js/action_menu.js'
       ],
       function() {
         var prompt = new ActionMenu('photo-options');

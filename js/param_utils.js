@@ -7,10 +7,10 @@
    */
 
   const paths = {
-    detail: '/views/details/details.html',
-    form: '/views/form/form.html',
-    settings: '/views/settings/settings.html',
-    list: '/views/list/list.html'
+    detail: '/contacts/views/details/details.html',
+    form: '/contacts/views/form/form.html',
+    settings: '/contacts/views/settings/settings.html',
+    list: '/contacts/views/list/list.html'
   };
 
   exports.ParamUtils = {

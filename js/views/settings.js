@@ -171,7 +171,7 @@ contacts.Settings = (function() {
 
   function importContactsHandler() {
       // Hide elements for export and transition
-      LazyLoader.load(['/js/utilities/telemetry.js'], () => {
+      LazyLoader.load(['/contacts/js/utilities/telemetry.js'], () => {
         importSettingsPanel.classList.remove('export');
         importSettingsPanel.classList.add('import');
         updateImportTitle('importContactsTitle');
@@ -181,7 +181,7 @@ contacts.Settings = (function() {
 
   function exportContactsHandler() {
       // Hide elements for import and transition
-      LazyLoader.load(['/js/export/contacts_exporter.js'], loadSearch);
+      LazyLoader.load(['/contacts/js/export/contacts_exporter.js'], loadSearch);
 
       function loadSearch() {
         Loader.view('search', function() {
@@ -195,9 +195,9 @@ contacts.Settings = (function() {
 
   function showICEScreen(cb) {
     LazyLoader.load([
-      '/js/utilities/ice_data.js',
-      '/js/views/ice_settings.js',
-      '/shared/js/contacts/utilities/ice_store.js'], function(){
+      '/contacts/js/utilities/ice_data.js',
+      '/contacts/js/views/ice_settings.js',
+      '/contacts/shared/js/contacts/utilities/ice_store.js'], function(){
       ICE.refresh();
       navigationHandler.go('ice-settings', 'right-left');
       if (typeof cb === 'function') {
@@ -248,8 +248,8 @@ contacts.Settings = (function() {
   var bulkDeleteHandler = function bulkDeleteHandler() {
     LazyLoader.load(
       [
-        '/js/contacts_bulk_delete.js',
-        '/js/contacts_remover.js'
+        '/contacts/js/contacts_bulk_delete.js',
+        '/contacts/js/contacts_remover.js'
       ],
       function() {
         Loader.view('search', function() {
@@ -273,7 +273,7 @@ contacts.Settings = (function() {
     switch (source) {
       case 'sim':
         var iccId = e.target.parentNode.dataset.iccid;
-        LazyLoader.load(['/js/export/sim.js'],
+        LazyLoader.load(['/contacts/js/export/sim.js'],
           function() {
             doExport(new ContactsSIMExport(IccHandler.getIccById(iccId)));
           }
@@ -282,11 +282,11 @@ contacts.Settings = (function() {
       case 'sd':
         LazyLoader.load(
           [
-            '/shared/js/device_storage/get_storage_if_available.js',
-            '/shared/js/device_storage/get_unused_filename.js',
-            '/shared/js/contact2vcard.js',
-            '/shared/js/setImmediate.js',
-            '/js/export/sd.js'
+            '/contacts/shared/js/device_storage/get_storage_if_available.js',
+            '/contacts/shared/js/device_storage/get_unused_filename.js',
+            '/contacts/shared/js/contact2vcard.js',
+            '/contacts/shared/js/setImmediate.js',
+            '/contacts/js/export/sd.js'
           ],
           function() {
             doExport(new ContactsSDExport());
@@ -296,11 +296,11 @@ contacts.Settings = (function() {
       case 'bluetooth':
         LazyLoader.load(
           [
-            '/shared/js/device_storage/get_storage_if_available.js',
-            '/shared/js/device_storage/get_unused_filename.js',
-            '/shared/js/contact2vcard.js',
-            '/shared/js/setImmediate.js',
-            '/js/export/bt.js'
+            '/contacts/shared/js/device_storage/get_storage_if_available.js',
+            '/contacts/shared/js/device_storage/get_unused_filename.js',
+            '/contacts/shared/js/contact2vcard.js',
+            '/contacts/shared/js/setImmediate.js',
+            '/contacts/js/export/bt.js'
           ],
           function() {
             doExport(new ContactsBTExport());
@@ -763,7 +763,7 @@ contacts.Settings = (function() {
       return;
     }
 
-    LazyLoader.load(['/shared/js/contacts/utilities/http_rest.js'],
+    LazyLoader.load(['/contacts/shared/js/contacts/utilities/http_rest.js'],
     function() {
       window.asyncStorage.getItem(PENDING_LOGOUT_KEY, function(data) {
         if (!data) {

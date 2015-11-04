@@ -515,7 +515,7 @@ monitorTagVisibility, GaiaHeader, GaiaSubheader */
       return;
     }
 
-    utils.config.load('/config.json').then(function ready(configData) {
+    utils.config.load('/contacts/config.json').then(function ready(configData) {
       orderByLastName = (configData.defaultContactsOrder ===
                 ORDER_BY_FAMILY_NAME ? true : false);
       defaultImage = configData.defaultImage === true;
@@ -858,7 +858,7 @@ monitorTagVisibility, GaiaHeader, GaiaSubheader */
 
   function loadVisibilityMonitor() {
     return new Promise((resolve) => {
-      LazyLoader.load('/shared/js/tag_visibility_monitor.js', () => {
+      LazyLoader.load('/contacts/shared/js/tag_visibility_monitor.js', () => {
         var scrollMargin = ~~(getViewHeight() * 1.5);
         // NOTE: Making scrollDelta too large will cause janky scrolling
         //       due to bursts of onscreen() calls from the monitor.
@@ -1025,7 +1025,7 @@ monitorTagVisibility, GaiaHeader, GaiaSubheader */
 
     // Replacing old message 'startup-path-done'
     utils.PerformanceHelper.loadEnd();
-    LazyLoader.load(['/shared/js/contacts/utilities/image_loader.js'], () => {
+    LazyLoader.load(['/contacts/shared/js/contacts/utilities/image_loader.js'], () => {
       lazyLoadImages();
       loaded = true;
     });
@@ -1045,8 +1045,8 @@ monitorTagVisibility, GaiaHeader, GaiaSubheader */
   function loadICE() {
     return new Promise((resolve, reject) => {
       LazyLoader.load([
-        '/js/utilities/ice_data.js',
-        '/shared/js/contacts/utilities/ice_store.js'],
+        '/contacts/js/utilities/ice_data.js',
+        '/contacts/shared/js/contacts/utilities/ice_store.js'],
        function() {
         ICEStore.getContacts().then((ids) => {
           displayICEIndicator(ids);
@@ -1118,7 +1118,7 @@ monitorTagVisibility, GaiaHeader, GaiaSubheader */
     elem.classList.add('contact-item');
     elem.dataset.group = 'ice';
     var icon = document.createElement('span');
-    icon.src = '/style/images/icon_ice.png';
+    icon.src = '/contacts/style/images/icon_ice.png';
     var p = document.createElement('p');
     p.classList.add('contact-text');
     p.setAttribute('data-l10n-id', 'ICEContactsGroup');
@@ -1147,10 +1147,10 @@ monitorTagVisibility, GaiaHeader, GaiaSubheader */
 
   function onICEGroupClicked() {
     loadICE().then(() => {
-      LazyLoader.load(['/shared/js/contacts/utilities/image_loader.js',
-        '/js/views/ice.js',
+      LazyLoader.load(['/contacts/shared/js/contacts/utilities/image_loader.js',
+        '/contacts/js/views/ice.js',
         document.getElementById('ice-view'),
-        '/views/list/js/main_navigation.js'], () => {
+        '/contacts/views/list/js/main_navigation.js'], () => {
         // Prebuild the rows here, we have all the data to
         // build them. Current amount of rows is 2.
         function rowBuilder(id, node) {
@@ -1204,7 +1204,7 @@ monitorTagVisibility, GaiaHeader, GaiaSubheader */
   }
 
   function lazyLoadImages() {
-    LazyLoader.load(['/shared/js/contacts/utilities/image_loader.js'],
+    LazyLoader.load(['/contacts/shared/js/contacts/utilities/image_loader.js'],
       function() {
       if (!imgLoader) {
         imgLoader = new ImageLoader('#groups-container',
@@ -1414,7 +1414,7 @@ monitorTagVisibility, GaiaHeader, GaiaSubheader */
   }
 
   function showNoContactsAlert() {
-    LazyLoader.load(['/shared/js/confirm.js',
+    LazyLoader.load(['/contacts/shared/js/confirm.js',
           document.getElementById('confirmation-message')], function() {
       var msg = 'noContactsActivity2';
       var noObject = {

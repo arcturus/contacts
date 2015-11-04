@@ -5,8 +5,8 @@
 /*
  *   WARNING: This module LazyLoads
  *
- *   '/shared/js/contacts/import/utilities/config.js',
- *   '/shared/js/image_utils.js'
+ *   '/contacts/shared/js/contacts/import/utilities/config.js',
+ *   '/contacts/shared/js/image_utils.js'
  *
  */
 
@@ -14,13 +14,13 @@ var utils = window.utils || {};
 
 (function(utils) {
   var DEPENDENCIES = [
-    '/shared/js/contacts/import/utilities/config.js',
-    '/shared/js/image_utils.js'
+    '/contacts/shared/js/contacts/import/utilities/config.js',
+    '/contacts/shared/js/image_utils.js'
   ];
 
   var dpr = window.devicePixelRatio || 1;
 
-  var CONFIG_FILE = '/config-images.json';
+  var CONFIG_FILE = '/contacts/config-images.json';
 
   // Default data for creating a thumbnail. This will be used if a config file
   // is not found

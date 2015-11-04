@@ -284,7 +284,7 @@ if (!window.FacebookConnector) {
 
         var out = fb.friend2mozContact(source);
         out.contactPictureUri = 'https://graph.facebook.com/' +
-                                  source.uid + '/picture?type=square' +
+                                  source.uid + '/contacts/picture?type=square' +
                                   '&width=' + picWidth +
                                   '&height=' + picHeight +
                                   '&t=' + Date.now();

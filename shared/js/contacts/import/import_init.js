@@ -31,31 +31,31 @@
 
   var servicesConnectors = {
     'live': function(cb) {
-      LazyLoader.load('/shared/js/contacts/import/live/live_connector.js',
+      LazyLoader.load('/contacts/shared/js/contacts/import/live/live_connector.js',
         function() {
           cb(LiveConnector);
       });
     },
     'gmail': function gmailLoader(cb) {
-      LazyLoader.load('/shared/js/contacts/import/gmail/gmail_connector.js',
+      LazyLoader.load('/contacts/shared/js/contacts/import/gmail/gmail_connector.js',
         function onLoad() {
           cb(GmailConnector);
       });
     },
     'facebook': function(cb) {
       var files = [
-                   '/shared/js/fb/fb_request.js',
-                   '/shared/js/contacts/import/facebook/fb_data.js',
-                   '/shared/js/contacts/import/facebook/fb_utils.js',
-                   '/shared/js/fb/fb_reader_utils.js',
-                   '/shared/js/contacts/import/facebook/fb_contact_utils.js',
-                   '/shared/js/contacts/import/facebook/fb_query.js',
-                   '/shared/js/contacts/import/facebook/fb_contact.js',
-                   '/shared/js/contacts/import/facebook/facebook_connector.js',
-                   '/shared/pages/import/style/facebook.css'
+                   '/contacts/shared/js/fb/fb_request.js',
+                   '/contacts/shared/js/contacts/import/facebook/fb_data.js',
+                   '/contacts/shared/js/contacts/import/facebook/fb_utils.js',
+                   '/contacts/shared/js/fb/fb_reader_utils.js',
+                   '/contacts/shared/js/contacts/import/facebook/fb_contact_utils.js',
+                   '/contacts/shared/js/contacts/import/facebook/fb_query.js',
+                   '/contacts/shared/js/contacts/import/facebook/fb_contact.js',
+                   '/contacts/shared/js/contacts/import/facebook/facebook_connector.js',
+                   '/contacts/shared/pages/import/style/facebook.css'
       ];
       if (!params.ftu) {
-        files.push('/facebook/js/fb_sync.js');
+        files.push('/contacts/facebook/js/fb_sync.js');
       }
       LazyLoader.load(files, function() {
         cb(FacebookConnector);

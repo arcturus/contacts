@@ -346,10 +346,10 @@
   function doDeleteAction() {
     LazyLoader.load(
       [
-        '/js/contacts_bulk_delete.js',
-        '/js/contacts_remover.js',
-        '/shared/js/contacts/import/utilities/status.js',
-        '/shared/js/confirm.js',
+        '/contacts/js/contacts_bulk_delete.js',
+        '/contacts/js/contacts_remover.js',
+        '/contacts/shared/js/contacts/import/utilities/status.js',
+        '/contacts/shared/js/confirm.js',
         document.getElementById('confirmation-message')
       ], function() {
         updateSelectCount(0);
@@ -388,11 +388,11 @@
       case 'sim':
         var iccId = operation.iccId;
 
-        LazyLoader.load(['/js/export/sim.js',
-          '/js/utilities/icc_handler.js',
-          '/js/export/contacts_exporter.js',
-          '/shared/js/contacts/import/utilities/status.js',
-          '/shared/js/confirm.js',
+        LazyLoader.load(['/contacts/js/export/sim.js',
+          '/contacts/js/utilities/icc_handler.js',
+          '/contacts/js/export/contacts_exporter.js',
+          '/contacts/shared/js/contacts/import/utilities/status.js',
+          '/contacts/shared/js/confirm.js',
           document.getElementById('confirmation-message')],
           function() {
             // TODO promise like init function?
@@ -404,13 +404,13 @@
       case 'sd':
         LazyLoader.load(
           [
-            '/shared/js/device_storage/get_storage_if_available.js',
-            '/shared/js/device_storage/get_unused_filename.js',
-            '/shared/js/contact2vcard.js',
-            '/shared/js/setImmediate.js',
-            '/js/export/sd.js',
-            '/js/export/contacts_exporter.js',
-            '/shared/js/contacts/import/utilities/status.js'
+            '/contacts/shared/js/device_storage/get_storage_if_available.js',
+            '/contacts/shared/js/device_storage/get_unused_filename.js',
+            '/contacts/shared/js/contact2vcard.js',
+            '/contacts/shared/js/setImmediate.js',
+            '/contacts/js/export/sd.js',
+            '/contacts/js/export/contacts_exporter.js',
+            '/contacts/shared/js/contacts/import/utilities/status.js'
           ],
           function() {
             doExport(new ContactsSDExport());
@@ -420,13 +420,13 @@
       case 'bluetooth':
         LazyLoader.load(
           [
-            '/shared/js/device_storage/get_storage_if_available.js',
-            '/shared/js/device_storage/get_unused_filename.js',
-            '/shared/js/contact2vcard.js',
-            '/shared/js/setImmediate.js',
-            '/js/export/bt.js',
-            '/js/export/contacts_exporter.js',
-            '/shared/js/contacts/import/utilities/status.js'
+            '/contacts/shared/js/device_storage/get_storage_if_available.js',
+            '/contacts/shared/js/device_storage/get_unused_filename.js',
+            '/contacts/shared/js/contact2vcard.js',
+            '/contacts/shared/js/setImmediate.js',
+            '/contacts/js/export/bt.js',
+            '/contacts/js/export/contacts_exporter.js',
+            '/contacts/shared/js/contacts/import/utilities/status.js'
           ],
           function() {
             doExport(new ContactsBTExport());

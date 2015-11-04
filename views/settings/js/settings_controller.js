@@ -141,7 +141,7 @@
       return;
     }
 
-    LazyLoader.load(['/shared/js/contacts/utilities/http_rest.js'],
+    LazyLoader.load(['/contacts/shared/js/contacts/utilities/http_rest.js'],
     function() {
       window.asyncStorage.getItem(PENDING_LOGOUT_KEY, function(data) {
         if (!data) {

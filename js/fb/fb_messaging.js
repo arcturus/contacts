@@ -7,7 +7,7 @@
 var fb = window.fb || {};
 
 if (typeof fb.msg === 'undefined') {
-  LazyLoader.load('/shared/pages/import/js/parameters.js', () => {
+  LazyLoader.load('/contacts/shared/pages/import/js/parameters.js', () => {
     (function(document) {
       var Msg = fb.msg = {};
       var to;

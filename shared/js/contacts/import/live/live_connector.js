@@ -7,7 +7,7 @@ if (!window.LiveConnector) {
   window.LiveConnector = (function() {
     var LIVE_ENDPOINT = 'https://apis.live.net/v5.0/';
     var CONTACTS_RESOURCE = 'me/contacts';
-    var PICTURE_RESOURCE = '/picture';
+    var PICTURE_RESOURCE = '/contacts/picture';
 
     var LIVE_CATEGORY = 'live';
 

@@ -16,7 +16,7 @@
 
   var extensionFrame = document.querySelector('#iframe_extensions');
   var oauthFrame = document.querySelector('#iframe_oauth');
-  oauthFrame.src = '/shared/pages/import/oauth.html';
+  oauthFrame.src = '/contacts/shared/pages/import/oauth.html';
   var currentURI, access_token;
   var canClose = true, canCloseLogout = true;
   var closeRequested = false;
@@ -33,7 +33,7 @@
     closeRequested = false;
     canClose = false;
     canCloseLogout = false;
-    load('/shared/pages/import/import.html?service=' + serviceName,
+    load('/contacts/shared/pages/import/import.html?service=' + serviceName,
          'friends', serviceName);
   }
 

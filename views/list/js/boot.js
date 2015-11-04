@@ -19,8 +19,8 @@ window.addEventListener('DOMContentLoaded', function() {
     utils.PerformanceHelper.visuallyComplete();
     firstPaintFired = true;
   });
-  LazyLoader.load(['/shared/js/l10n.js',
-    '/shared/js/l10n_date.js']).then(function() {
+  LazyLoader.load(['/contacts/shared/js/l10n.js',
+    '/contacts/shared/js/l10n_date.js']).then(function() {
     // TODO Add if needed
   });
 });
@@ -30,29 +30,29 @@ window.addEventListener('load', function() {
     utils.PerformanceHelper.visuallyComplete();
   }
   var dependencies = [
-    '/shared/js/contacts/import/utilities/misc.js',
-    '/js/activities.js',
-    '/js/navigation.js',
-    '/shared/js/contact_photo_helper.js',
-    '/shared/js/tag_visibility_monitor.js',
-    '/js/utilities/normalizer.js',
-    '/shared/js/component_utils.js',
-    '/services/contacts.js',
-    '/js/header_ui.js',
-    '/shared/js/contacts/utilities/templates.js',
-    '/shared/js/contacts/contacts_shortcuts.js',
-    '/js/loader.js',
-    '/shared/js/text_normalizer.js',
-    '/shared/js/contacts/utilities/dom.js',
-    '/js/utilities/cookie.js',
-    '/shared/js/contacts/import/utilities/config.js',
-    '/shared/js/async_storage.js',
-    '/shared/js/contacts/search.js',
-    '/js/param_utils.js',
-    '/views/list/js/select_mode.js',
-    '/views/list/js/list_controller.js',
-    '/views/list/js/list_ui.js',
-    '/views/list/js/list_utils.js'
+    '/contacts/shared/js/contacts/import/utilities/misc.js',
+    '/contacts/js/activities.js',
+    '/contacts/js/navigation.js',
+    '/contacts/shared/js/contact_photo_helper.js',
+    '/contacts/shared/js/tag_visibility_monitor.js',
+    '/contacts/js/utilities/normalizer.js',
+    '/contacts/shared/js/component_utils.js',
+    '/contacts/services/contacts.js',
+    '/contacts/js/header_ui.js',
+    '/contacts/shared/js/contacts/utilities/templates.js',
+    '/contacts/shared/js/contacts/contacts_shortcuts.js',
+    '/contacts/js/loader.js',
+    '/contacts/shared/js/text_normalizer.js',
+    '/contacts/shared/js/contacts/utilities/dom.js',
+    '/contacts/js/utilities/cookie.js',
+    '/contacts/shared/js/contacts/import/utilities/config.js',
+    '/contacts/shared/js/async_storage.js',
+    '/contacts/shared/js/contacts/search.js',
+    '/contacts/js/param_utils.js',
+    '/contacts/views/list/js/select_mode.js',
+    '/contacts/views/list/js/list_controller.js',
+    '/contacts/views/list/js/list_ui.js',
+    '/contacts/views/list/js/list_utils.js'
   ];
 
   LazyLoader.load(dependencies).then(function() {

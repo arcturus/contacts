@@ -81,7 +81,7 @@
 
   //Import
   function importHandler() {
-    LazyLoader.load(['/js/utilities/telemetry.js'], () => {
+    LazyLoader.load(['/contacts/js/utilities/telemetry.js'], () => {
       // Hide elements for export and transition
       importSettingsPanel.classList.remove('export');
       importSettingsPanel.classList.add('import');
@@ -106,9 +106,9 @@
 
   function showICEScreen(cb) {
     LazyLoader.load([
-      '/js/utilities/ice_data.js',
-      '/js/views/ice_settings.js',
-      '/shared/js/contacts/utilities/ice_store.js'], function(){
+      '/contacts/js/utilities/ice_data.js',
+      '/contacts/js/views/ice_settings.js',
+      '/contacts/shared/js/contacts/utilities/ice_store.js'], function(){
       ICE.refresh();
       navigationHandler.go('ice-settings', 'right-left');
       if (typeof cb === 'function') {

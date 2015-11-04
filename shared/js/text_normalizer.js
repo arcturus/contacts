@@ -126,7 +126,7 @@ var Normalizer = {
     var escaped = str.replace(/&/g, '&amp;').replace(/</g, '&lt;')
                      .replace(/>/g, '&gt;');
     if (escapeQuotes) {
-      return escaped.replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
+      return escaped.replace(/"/g, '&quot;').replace(/'/contacts/g, '&#x27;');
     }
     return escaped;
   },

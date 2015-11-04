@@ -109,7 +109,7 @@ var ActivityHandler = {
   },
 
   handle: function ah_handle(activity) {
-    const VCARD_DEPS = '/js/activities_vcard.js';
+    const VCARD_DEPS = '/contacts/js/activities_vcard.js';
     switch (activity.source.name) {
       case 'new':
         this.launch_activity(activity, 'view-contact-form');
@@ -144,8 +144,8 @@ var ActivityHandler = {
         activity.source.data.blob) {
       LazyLoader.load([
         document.querySelector('#loading-overlay'),
-        '/shared/js/contacts/import/utilities/import_from_vcard.js',
-        '/shared/js/contacts/import/utilities/overlay.js'
+        '/contacts/shared/js/contacts/import/utilities/import_from_vcard.js',
+        '/contacts/shared/js/contacts/import/utilities/overlay.js'
       ], function loaded() {
         Contacts.loadFacebook(function() {
           utils.importFromVcard(activity.source.data.blob,
@@ -192,9 +192,9 @@ var ActivityHandler = {
       // (ex: the Facebook guards) experience a consistent MIME type.
       this._currentActivity.source.data.type = 'text/vcard';
       LazyLoader.load([
-                       '/shared/js/text_normalizer.js',
-                       '/shared/js/contact2vcard.js',
-                       '/shared/js/setImmediate.js'
+                       '/contacts/shared/js/text_normalizer.js',
+                       '/contacts/shared/js/contact2vcard.js',
+                       '/contacts/shared/js/setImmediate.js'
                       ], function lvcard() {
         ContactToVcardBlob([theContact], function blobReady(vcardBlob) {
           VcardFilename(theContact).then(filename => {
@@ -274,7 +274,7 @@ var ActivityHandler = {
         break;
       default:
         // if more than one required type of data
-        LazyLoader.load('/js/action_menu.js', function() {
+        LazyLoader.load('/contacts/js/action_menu.js', function() {
           if (!self._actionMenu) {
             self._actionMenu = new ActionMenu();
           } else {

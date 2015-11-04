@@ -12,7 +12,7 @@
  */
 
 window.addEventListener('DOMContentLoaded', function() {
-  LazyLoader.load(['/shared/js/l10n.js']).then(function() {
+  LazyLoader.load(['/contacts/shared/js/l10n.js']).then(function() {
     LazyLoader.load([
       document.getElementById('multiple-select-view')
     ]);
@@ -21,10 +21,10 @@ window.addEventListener('DOMContentLoaded', function() {
 
 window.addEventListener('load', function() {
   var dependencies = [
-    '/shared/js/contacts/import/utilities/vcard_reader.js',
-    '/views/vcard_load/js/vcard_handler.js',
-    '/views/vcard_load/js/vcard_load_ui.js',
-    '/views/vcard_load/js/vcard_load_controller.js'
+    '/contacts/shared/js/contacts/import/utilities/vcard_reader.js',
+    '/contacts/views/vcard_load/js/vcard_handler.js',
+    '/contacts/views/vcard_load/js/vcard_load_ui.js',
+    '/contacts/views/vcard_load/js/vcard_load_controller.js'
   ];
 
   LazyLoader.load(dependencies).then(function() {

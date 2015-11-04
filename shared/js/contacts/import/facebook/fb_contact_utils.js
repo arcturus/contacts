@@ -149,10 +149,10 @@ fb.getWorksAt = function(fbdata) {
 fb.getBirthDate = function getBirthDate(sbday) {
   var out = new Date(0);
 
-  var imonth = sbday.indexOf('/');
+  var imonth = sbday.indexOf('/contacts/');
   var smonth = sbday.substring(0, imonth);
 
-  var iyear = sbday.lastIndexOf('/');
+  var iyear = sbday.lastIndexOf('/contacts/');
   if (iyear === imonth) {
     iyear = sbday.length;
   }

@@ -18,7 +18,7 @@ var Curtain = (function() {
   if (!curtainFrame) {
     curtainFrame = document.createElement('iframe');
     curtainFrame.id = 'iframe_curtain';
-    curtainFrame.src = '/shared/pages/import/curtain.html';
+    curtainFrame.src = '/contacts/shared/pages/import/curtain.html';
     parent.document.body.appendChild(curtainFrame);
   }
 
