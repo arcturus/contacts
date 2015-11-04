@@ -9,7 +9,7 @@
 .favorite-indicator {
   display: none;
 
-  background: url(/style/gphx/bitmap/default/vw-header/icons/fav-star.png) no-repeat center / 3rem;
+  background: url(/contacts/style/gphx/bitmap/default/vw-header/icons/fav-star.png) no-repeat center / 3rem;
   padding: 0 1rem;
 }
 
@@ -469,7 +469,7 @@ gaia-header [data-icon] {
 }
 
 #view-settings [data-type="list"] .fb-item {
-  background-image: url(/style/images/f_logo.png);
+  background-image: url(/contacts/style/images/f_logo.png);
   background-repeat: no-repeat;
   background-size: 3rem;
 }
@@ -585,10 +585,10 @@ html[dir="rtl"] #view-settings [data-type="list"] .fb-item { background-position
 
 /* Extending icon types for view settings & import-settings*/
 #view-settings [data-type="list"] li button.icon-import:before {
-  background-image: url(/style/images/import_contacts.png);
+  background-image: url(/contacts/style/images/import_contacts.png);
 }
 #view-settings [data-type="list"] li button.icon-export:before {
-  background-image: url(/style/images/export_contacts.png);
+  background-image: url(/contacts/style/images/export_contacts.png);
 }
 
 #import-settings [data-type="list"] li button.icon:before {
@@ -596,23 +596,23 @@ html[dir="rtl"] #view-settings [data-type="list"] .fb-item { background-position
 }
 
 #import-settings [data-type="list"] li button.icon-sim:before {
-  background-image: url(/style/images/import_SIM.png);
+  background-image: url(/contacts/style/images/import_SIM.png);
 }
 
 #import-settings [data-type="list"] li button.icon-sd:before {
-  background-image: url(/style/images/import_sd.png);
+  background-image: url(/contacts/style/images/import_sd.png);
 }
 
 #import-settings [data-type="list"] li button.icon-gmail:before {
-  background-image: url(/style/images/gmail_icon.png);
+  background-image: url(/contacts/style/images/gmail_icon.png);
 }
 
 #import-settings [data-type="list"] li button.icon-live:before {
-  background-image: url(/style/images/outlook_icon.png);
+  background-image: url(/contacts/style/images/outlook_icon.png);
 }
 
 #import-settings [data-type="list"] li button.icon-bluetooth:before {
-  background-image: url(/style/images/bluetooth_icon.png);
+  background-image: url(/contacts/style/images/bluetooth_icon.png);
 }
 
 #ice-settings .ice-contacts-switch {
@@ -695,7 +695,7 @@ html[dir="rtl"] #view-settings [data-type="list"] .fb-item { background-position
 /* No Contacts */
 
 #no-contacts {
-  background: #FFF url(/style/images/contact_big_icon.png) no-repeat center center / 15.3rem;
+  background: #FFF url(/contacts/style/images/contact_big_icon.png) no-repeat center center / 15.3rem;
   height: 100%;
   position: absolute;
   width: 100%;
@@ -863,7 +863,7 @@ nav[data-type="scrollbar"] li .pack-icon-ice {
   font-size: 0;
   vertical-align: middle;
   background: transparent no-repeat center center / 1.2rem;
-  background-image: url("/style/images/ice_small.png");
+  background-image: url("/contacts/style/images/ice_small.png");
 }
 
 fieldset legend {
