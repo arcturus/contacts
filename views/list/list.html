@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="theme-group" content="theme-communications">
+    <meta name="theme-color" content="var(--header-background)">
+    <title> Contacts </title>
+
+    <!-- Building Blocks -->
+    <link href="/shared/style/input_areas.css" rel="stylesheet">
+    <link href="/shared/style/lists.css" rel="stylesheet">
+    <link href="/shared/style/scrolling.css" rel="stylesheet">
+    <link href="/shared/style/buttons.css" rel="stylesheet">
+    <link href="/shared/style/progress_activity.css" rel="stylesheet">
+    <link href="/shared/style/status.css" rel="stylesheet">
+    <link href="/shared/style/switches.css" rel="stylesheet">
+    <link href="/shared/style/confirm.css" rel="stylesheet">
+    <link href="/shared/style/action_menu.css" rel="stylesheet">
+    <link href="/shared/style/edit_mode.css" rel="stylesheet">
+    <link href="/shared/style/animations.css" rel="stylesheet">
+
+    <link href="/style/app.css" rel="stylesheet">
+    <link href="/style/contacts.css" rel="stylesheet">
+    <link href="/style/overlay.css" rel="stylesheet">
+    <link href="/shared/pages/import/style/search.css" rel="stylesheet">
+    <link href="/shared/pages/import/style/curtain_frame.css" rel="stylesheet">
+    <link href="/style/status.css" rel="stylesheet">
+    <link href="/style/fb_extensions.css" rel="stylesheet">
+    <link href="/style/match_service.css" rel="stylesheet">
+    <link href="/shared/style/contacts.css" rel="stylesheet">
+    <link href="/shared/style/contacts/contacts_buttons.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="app://theme.gaiamobile.org/shared/elements/gaia-theme/gaia-theme.css">
+
+    <link href="/views/list/style/overwrite.css" rel="stylesheet">
+
+    <!-- Web Components -->
+    <script defer="" src="/shared/elements/config.js"></script>
+    <script defer="" src="/shared/js/component_utils.js"></script>
+    <script defer="" src="/shared/elements/gaia_subheader/script.js"></script>
+    <script defer="" src="/shared/elements/gaia-header/dist/gaia-header.js"></script>
+
+    <link rel="localization" href="/locales-obj/views.list.list.{locale}.json">
+    
+
+    
+    
+    
+    
+
+    <!--
+      <script defer src="/shared/js/tag_visibility_monitor.js"></script>
+      <script defer src="/shared/js/contact_photo_helper.js"></script>
+      <script defer src="/shared/js/component_utils.js"></script>
+      <script defer src="/shared/js/text_normalizer.js"></script>
+      <script defer src="/shared/js/async_storage.js"></script>
+      <script defer src="/shared/js/sanitizer.js"></script>
+      <script defer src="/shared/js/confirm.js"></script>
+      <script defer src="/shared/js/contacts/import/utilities/status.js"></script>
+      <script defer src="/shared/js/contacts/import/utilities/config.js"></script>
+      <script defer src="/shared/js/contacts/utilities/image_loader.js"></script>
+      <script defer src="/shared/js/contacts/utilities/templates.js"></script>
+      <script defer src="/shared/js/contacts/utilities/ice_store.js"></script>
+      <script defer src="/shared/js/contacts/contacts_shortcuts.js"></script>
+      <script defer src="/shared/js/contacts/utilities/dom.js"></script>
+      <script defer src="/shared/js/contacts/search.js"></script>
+      <script defer src="/js/utilities/cookie.js"></script>
+    -->
+
+    <script defer="" src="/shared/js/lazy_loader.js"></script>
+    <script defer="" src="/js/utilities/performance_helper.js"></script>
+    <script defer="" src="/js/cache.js"></script>
+    <script defer="" src="/views/list/js/boot.js"></script>
+
+    <meta name="defaultLanguage" content="en-US">
+    <meta name="availableLanguages" content="en-US:201510031555, qps-ploc:201510031555, qps-plocm:201510031555">
+    
+    
+    
+    
+
+    
+    
+    
+    
+  <meta content="2.5" name="appVersion"></head>
+
+  <body role="application" class="app-contacts skin-comms theme-communications" data-action="list">
+
+      <!-- Contacts List Section -->
+      <section id="view-contacts-list" role="region" data-state="active" class="view view-noscroll view-contacts-list">
+        <gaia-header id="contacts-list-header">
+          <h1 id="app-title" data-l10n-id="contacts">Contacts</h1>
+          <a aria-label="Add" id="add-contact-button" href="/views/form/form.html?action=new" data-icon="add" data-l10n-id="addButton"></a>
+          <a aria-label="Settings" id="settings-button" href="/views/settings/settings.html" data-icon="settings" data-l10n-id="settingsButton"></a>
+        </gaia-header>
+
+        <article class="view-body">
+          <div id="no-contacts" class="hide">
+            <div class="info">
+              <p data-l10n-id="no-contacts">No contacts</p>
+              <p data-l10n-id="start-adding">Start adding them now</p>
+            </div>
+          </div>
+          <nav data-type="scrollbar">
+            <p></p>
+            <ol>
+              <li data-anchor="search-container" data-img="magnifier_icon_big.png">
+                <a href="#"><span class="pack-icon-search">Search</span></a>
+              </li>
+              <li class="hide" data-anchor="group-ice" data-img="icon_ice_shortcut.png">
+                <a href="#"><span class="pack-icon-ice">ICE</span></a>
+              </li>
+              <li data-anchor="group-favorites" data-img="star_icon_big.png">
+                <a href="#"><span class="pack-icon-favorites">Favorites</span></a>
+              </li>
+              <li data-anchor="group-A" data-letter="A"><a href="#">A</a></li>
+              <li data-anchor="group-B" data-letter="B"><a href="#">B</a></li>
+              <li data-anchor="group-C" data-letter="C"><a href="#">C</a></li>
+              <li data-anchor="group-D" data-letter="D"><a href="#">D</a></li>
+              <li data-anchor="group-E" data-letter="E"><a href="#">E</a></li>
+              <li data-anchor="group-F" data-letter="F"><a href="#">F</a></li>
+              <li data-anchor="group-G" data-letter="G"><a href="#">G</a></li>
+              <li data-anchor="group-H" data-letter="H"><a href="#">H</a></li>
+              <li data-anchor="group-I" data-letter="I"><a href="#">I</a></li>
+              <li data-anchor="group-J" data-letter="J"><a href="#">J</a></li>
+              <li data-anchor="group-K" data-letter="K"><a href="#">K</a></li>
+              <li data-anchor="group-L" data-letter="L"><a href="#">L</a></li>
+              <li data-anchor="group-M" data-letter="M"><a href="#">M</a></li>
+              <li data-anchor="group-N" data-letter="N"><a href="#">N</a></li>
+              <li data-anchor="group-O" data-letter="O"><a href="#">O</a></li>
+              <li data-anchor="group-P" data-letter="P"><a href="#">P</a></li>
+              <li data-anchor="group-Q" data-letter="Q"><a href="#">Q</a></li>
+              <li data-anchor="group-R" data-letter="R"><a href="#">R</a></li>
+              <li data-anchor="group-S" data-letter="S"><a href="#">S</a></li>
+              <li data-anchor="group-T" data-letter="T"><a href="#">T</a></li>
+              <li data-anchor="group-U" data-letter="U"><a href="#">U</a></li>
+              <li data-anchor="group-V" data-letter="V"><a href="#">V</a></li>
+              <li data-anchor="group-W" data-letter="W"><a href="#">W</a></li>
+              <li data-anchor="group-X" data-letter="X"><a href="#">X</a></li>
+              <li data-anchor="group-Y" data-letter="Y"><a href="#">Y</a></li>
+              <li data-anchor="group-Z" data-letter="Z"><a href="#">Z</a></li>
+              <li data-anchor="group-#" data-letter="#"><a href="#">#</a></li>
+            </ol>
+          </nav>
+          <div id="groups-container-box">
+            <div id="groups-container" class="view-body-inner">
+              <div id="groups-container-background">
+                <form id="search-container" class="search" role="search">
+                  <p>
+                    <label id="search-start">
+                      <input name="search" class="textfield" x-inputmode="verbatim" placeholder="Search" data-l10n-id="search-contact" type="search">
+                    </label>
+                 </p>
+                </form>
+                <section id="groups-list" data-type="list" class="active">
+                  <!-- Group template here -->
+                </section>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <form id="selectable-form" role="dialog" data-type="edit" class="hide">
+        <section role="region" class="theme-settings">
+          <gaia-header id="selectable-form-header" action="close">
+            <h1 id="edit-title" data-l10n-id="contacts">Contacts</h1>
+            <button type="button" id="select-action"></button>
+          </gaia-header>
+        </section>
+        <menu id="select-all-wrapper">
+         <button id="deselect-all" class="edit-button" data-l10n-id="deselectAll" disabled="">Deselect all</button>
+          <button id="select-all" class="edit-button" data-l10n-id="selectAll">Select all</button>
+        </menu>
+      </form>
+      <form id="confirmation-message" class="hide" role="dialog" data-type="confirm"><!--
+    <section>
+      <h1>Confirmation title</h1>
+      <p>Confirmation message</p>
+    </section>
+    <menu>
+      <button>Action 1</button>
+      <button>Action 2</button>
+    </menu>
+  --></form>
+      <section id="ice-view" role="region" class="view view-right hidden"><!--
+    <gaia-header id="ice-header" action="back">
+      <h1 data-l10n-id="ice_contacts"></h1>
+    </gaia-header>
+    <arcticle class="view-body">
+      <section id="ice-list" data-type="list" class="active">
+        <ol id="ice-group" role="">
+        </ol>
+      </section>
+    </arcticle>
+  --></section>
+      <section id="search-view" class="view"><!--
+    <form id="searchview-container" class="search" role="search">
+      <p>
+        <label role="presentation">
+          <input name="search" class="textfield" x-inputmode="verbatim" id="search-contact" placeholder="Search" data-l10n-id="search-contact" type="search">
+          <button type="reset">Clear</button>
+        </label>
+      </p>
+      <button id="cancel-search" data-l10n-id="cancel" type="submit">Cancel</button>
+    </form>
+
+    <section id="groups-list-search">
+      <ol id="search-list" data-type="list" class="active" role="listbox">
+      </ol>
+    </section>
+
+    <section id="search-process">
+      <p id="no-result" class="hide" data-l10n-id="noResults">No contacts found</p>
+      <p id="search-progress" class="hidden" role="status">
+        <progress class="small"></progress>
+      </p>
+    </section>
+  --></section>
+      <section id="statusMsg" class="hidden" role="status"><!--
+    <p></p>
+  --></section>
+      <form id="action-menu" role="dialog" data-type="action" class="hide">
+        <header id="org-title" data-l10n-id="select_recipient">Select recipient</header>
+        <menu id="value-menu" type="toolbar">
+      </menu>
+    </form>
+  </body>
+
+</html>
